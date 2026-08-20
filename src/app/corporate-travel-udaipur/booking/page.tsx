@@ -58,7 +58,7 @@ function CorporateBookingContent() {
     setIsSubmitting(true);
     
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/bookings`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '')}/api/bookings`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -260,3 +260,4 @@ export default function CorporateBookingPage() {
     </main>
   );
 }
+

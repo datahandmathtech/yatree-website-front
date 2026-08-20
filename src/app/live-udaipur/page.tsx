@@ -24,12 +24,12 @@ Time: ${formData.time}
 Service: ${formData.service}
 Car Type: ${formData.carType}`;
     
-    window.open(`https://wa.me/916367466426?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/919257109729?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const handleWhatsAppQuote = (packageName: string, carType: string, price: string) => {
     const message = `Hello Yatree Destination! I want to book the "${packageName}" for a ${carType} at ₹${price}. Please confirm availability.`;
-    window.open(`https://wa.me/916367466426?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/919257109729?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const services = [
@@ -310,7 +310,7 @@ Car Type: ${formData.carType}`;
                   <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="bg-orange-500 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-orange-600 transition-colors shadow-lg">
                     Book Now →
                   </button>
-                  <a href="https://wa.me/916367466426" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-white/20 transition-colors flex items-center justify-center gap-2">
+                  <a href="https://wa.me/919257109729" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-white/20 transition-colors flex items-center justify-center gap-2">
                     <MessageCircle className="w-5 h-5 text-[#25D366]" /> WhatsApp Chat
                   </a>
                 </div>

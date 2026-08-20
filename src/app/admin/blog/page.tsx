@@ -38,7 +38,7 @@ export default function BlogCMSPage() {
   const fetchBlogs = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/blogs`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '')}/api/blogs`);
       const data = await response.json();
       if (data.status === "success") {
         setBlogs(data.data.blogs);
@@ -148,3 +148,4 @@ export default function BlogCMSPage() {
     </AdminLayout>
   );
 }
+

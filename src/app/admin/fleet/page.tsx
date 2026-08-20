@@ -37,7 +37,7 @@ export default function FleetPage() {
   const fetchVehicles = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/vehicles`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '')}/api/vehicles`);
       const data = await response.json();
       if (data.status === "success") {
         setVehicles(data.data.vehicles);
@@ -161,3 +161,4 @@ export default function FleetPage() {
     </AdminLayout>
   );
 }
+

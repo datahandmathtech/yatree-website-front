@@ -46,7 +46,7 @@ export default function BookingsPage() {
   const fetchBookings = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/bookings`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '')}/api/bookings`);
       const data = await response.json();
       if (data.status === "success") {
         setBookings(data.data.bookings);
@@ -219,3 +219,4 @@ export default function BookingsPage() {
     </AdminLayout>
   );
 }
+

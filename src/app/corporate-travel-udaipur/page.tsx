@@ -16,27 +16,27 @@ export default function CorporateMicePage() {
     {
       route: "UDAIPUR TO AIRPORT / UDAIPUR DROP",
       icon: <PlaneTakeoff className="w-5 h-5" />,
-      prices: ["₹850", "₹1,050", "₹1,400", "₹1,600", "₹2,000", "₹3,000", "₹4,000", "₹4,500", "₹6,500"]
+      prices: ["₹1,050", "₹1,400", "₹1,600", "₹2,000", "₹3,000", "₹4,000", "₹4,500", "₹6,500"]
     },
     {
       route: "AIRPORT PICKUP TO UDAIPUR DROP",
       icon: <PlaneTakeoff className="w-5 h-5 rotate-180" />,
-      prices: ["₹850", "₹1,050", "₹1,400", "₹1,600", "₹2,000", "₹3,000", "₹4,000", "₹4,500", "₹6,500"]
+      prices: ["₹1,050", "₹1,400", "₹1,600", "₹2,000", "₹3,000", "₹4,000", "₹4,500", "₹6,500"]
     },
     {
       route: "04 HRS. 40 KM CITY TOUR",
       icon: <Building2 className="w-5 h-5" />,
-      prices: ["₹2,000", "₹2,500", "₹2,500", "₹2,750", "₹3,500", "₹4,000", "₹5,000", "₹5,000", "₹7,500"]
+      prices: ["₹2,500", "₹2,500", "₹2,750", "₹3,500", "₹4,000", "₹5,000", "₹5,000", "₹7,500"]
     },
     {
       route: "08 HRS. 80 KM CITY TOUR",
       icon: <Building2 className="w-5 h-5" />,
-      prices: ["₹2,500", "₹3,000", "₹3,500", "₹4,000", "₹4,500", "₹5,500", "₹6,500", "₹7,500", "₹12,000"]
+      prices: ["₹3,000", "₹3,500", "₹4,000", "₹4,500", "₹5,500", "₹6,500", "₹7,500", "₹12,000"]
     },
     {
       route: "12 HRS. 120 KM CITY TOUR",
       icon: <Building2 className="w-5 h-5" />,
-      prices: ["₹3,000", "₹3,500", "₹4,000", "₹4,500", "₹6,000", "₹6,500", "₹8,500", "₹10,000", "₹15,000"]
+      prices: ["₹3,500", "₹4,000", "₹4,500", "₹6,000", "₹6,500", "₹8,500", "₹10,000", "₹15,000"]
     }
   ];
 
@@ -188,23 +188,21 @@ export default function CorporateMicePage() {
           <div className="overflow-x-auto pb-4 custom-scrollbar">
             <div className="min-w-[1100px]">
               {/* Table Header */}
-              <div className="grid grid-cols-[280px_repeat(9,1fr)] gap-1 mb-2">
+              <div className="grid grid-cols-[280px_repeat(8,1fr)] gap-1 mb-2">
                 <div className="bg-[#13264F] rounded-t-lg"></div>
                 
                 {[
-                  { title: "Sedan", desc: "Etios/Dzire" },
-                  { title: "Premium Sedan", desc: "Verna/Ciaz" },
-                  { title: "Innova", desc: "6-7 Seater" },
-                  { title: "Innova Crysta", desc: "6-7 Seater" },
-                  { title: "Hycross", desc: "6-7 Seater" },
-                  { title: "Traveller", desc: "12-17 Seater" },
-                  { title: "Luxury Urbania", desc: "12-17 Seater" },
-                  { title: "Fortuner", desc: "6-7 Seater" },
-                  { title: "Luxury", desc: "BMW/Mercedes" }
+                  { title: "Premium Sedan" },
+                  { title: "Innova" },
+                  { title: "Innova Crysta" },
+                  { title: "Hycross" },
+                  { title: "Traveller" },
+                  { title: "Luxury Urbania" },
+                  { title: "Fortuner" },
+                  { title: "Luxury" }
                 ].map((col, i) => (
-                  <div key={i} className="bg-[#13264F] text-center p-3 rounded-t-lg border-b-2 border-[#B68C5A]">
-                    <p className="text-white font-bold text-sm mb-1">{col.title}</p>
-                    <p className="text-[#B68C5A] text-[10px] font-semibold">{col.desc}</p>
+                  <div key={i} className="bg-[#13264F] text-center p-3 rounded-t-lg border-b-2 border-[#B68C5A] flex items-center justify-center">
+                    <p className="text-white font-bold text-sm">{col.title}</p>
                   </div>
                 ))}
               </div>
@@ -212,7 +210,7 @@ export default function CorporateMicePage() {
               {/* Table Rows */}
               <div className="space-y-1">
                 {fleetRates.map((row, i) => (
-                  <div key={i} className="grid grid-cols-[280px_repeat(9,1fr)] gap-1">
+                  <div key={i} className="grid grid-cols-[280px_repeat(8,1fr)] gap-1">
                     <div className="bg-slate-50 border border-slate-100 p-3 rounded-l-lg flex items-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-[#B68C5A] text-white flex items-center justify-center text-[10px] font-bold shrink-0">{i+1}.</div>
                       <div className="w-8 h-8 rounded bg-[#13264F] text-white flex items-center justify-center shrink-0">
