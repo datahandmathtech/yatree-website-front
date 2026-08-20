@@ -14,11 +14,13 @@ export default function Navbar() {
   const isMultiDayPage = pathname?.includes('/multi-day-taxi-packages');
   const isCorporatePage = pathname?.includes('/corporate-travel-udaipur');
   const isLiveUdaipurPage = pathname?.includes('/live-udaipur');
+  const isBookingPage = pathname?.includes('/booking');
   
   let phoneLink = "tel:+917627013579";
   if (isMultiDayPage) phoneLink = "tel:+916367466426";
   else if (isCorporatePage) phoneLink = "tel:+919359975658";
-  else if (isLiveUdaipurPage) phoneLink = "tel:+918000505810";
+  else if (isLiveUdaipurPage) phoneLink = "tel:+919257109729";
+  else if (isBookingPage) phoneLink = "tel:+919257109725";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);

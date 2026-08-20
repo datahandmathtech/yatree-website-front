@@ -41,6 +41,7 @@ export default function Footer() {
   const isMultiDayPage = pathname?.includes('/multi-day-taxi-packages');
   const isCorporatePage = pathname?.includes('/corporate-travel-udaipur');
   const isLiveUdaipurPage = pathname?.includes('/live-udaipur');
+  const isBookingPage = pathname?.includes('/booking');
 
   let phoneDisplay = "+91 76270 13579";
   let phoneLink = "tel:+917627013579";
@@ -52,8 +53,11 @@ export default function Footer() {
     phoneDisplay = "+91 93599 75658";
     phoneLink = "tel:+919359975658";
   } else if (isLiveUdaipurPage) {
-    phoneDisplay = "+91 80005 05810";
-    phoneLink = "tel:+918000505810";
+    phoneDisplay = "+91 92571 09729";
+    phoneLink = "tel:+919257109729";
+  } else if (isBookingPage) {
+    phoneDisplay = "+91 92571 09725";
+    phoneLink = "tel:+919257109725";
   }
 
   const currentYear = new Date().getFullYear();
