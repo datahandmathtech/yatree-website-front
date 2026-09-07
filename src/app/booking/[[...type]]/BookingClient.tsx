@@ -1271,8 +1271,8 @@ export default function BookingPage() {
     <main className="relative min-h-screen bg-slate-50 selection:bg-gold-premium selection:text-midnight pt-24">
       <Navbar />
 
-      {/* Premium Visual Banner with Picture */}
-      <div className="relative min-h-[440px] md:min-h-[500px] bg-slate-950 py-16 md:py-24 px-6 text-center overflow-hidden flex items-center justify-center border-b border-white/10">
+      {/* Premium Visual Banner with Open Cinematic Background */}
+      <div className="relative min-h-[380px] md:min-h-[460px] bg-slate-950 py-16 md:py-20 px-6 text-center overflow-hidden flex items-center justify-center border-b border-white/10">
         {/* Background Picture */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -1280,32 +1280,45 @@ export default function BookingPage() {
             alt="Best Taxi Service in Udaipur - Yatree Destination"
             fill
             priority
-            className="object-cover object-[center_60%] scale-100 brightness-[0.85] contrast-[1.05]"
+            className="object-cover object-[center_55%] scale-100 brightness-[0.88] contrast-[1.02]"
           />
-          {/* Subtle vignette gradients so picture remains rich and clear */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/70" />
-          <div className="absolute inset-0 bg-slate-950/20" />
+          {/* Natural Cinematic Overlay - Keeps cars, palace and water clearly visible */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-slate-950/60" />
+          <div className="absolute inset-0 bg-slate-950/15" />
         </div>
 
         {/* Ambient Glows */}
-        <div className="absolute inset-0 opacity-40 pointer-events-none z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[260px] bg-gold-premium/15 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] h-[240px] bg-gold-premium/15 rounded-full blur-[100px]" />
         </div>
         
-        {/* Content Container - Luxury Frosted Glass Card */}
-        <div className="relative z-10 max-w-3xl mx-auto w-full bg-slate-950/65 backdrop-blur-xl border border-white/15 p-8 md:p-12 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col items-center">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gold-premium/40 bg-gold-premium/10 backdrop-blur-md text-gold-premium font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+        {/* Content Container - Open, Clean & High Contrast */}
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gold-premium/50 bg-slate-950/60 backdrop-blur-md text-gold-premium font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-5 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
             <Sparkle className="w-3.5 h-3.5 text-gold-premium animate-pulse" />
             Explore Udaipur US
-          </span>
+          </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase mb-4 leading-[1.1] drop-shadow-md">
-            Best Taxi Service in <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-premium via-gold-light to-gold-premium">Udaipur</span>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight uppercase mb-4 leading-[1.08] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+            Best Taxi Service in <span className="text-gold-premium">Udaipur</span>
           </h1>
 
-          <p className="text-slate-200/90 max-w-xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed font-normal">
+          <p className="text-slate-100 max-w-2xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
             Official, fully transparent fixed pricing sheets. Select your desired sightseeing parameters or transfer routes to estimate exact prices and reserve instantly.
           </p>
+
+          {/* Quick Trust Highlights */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-white/90 text-xs font-semibold">
+            <span className="px-4 py-1.5 rounded-full bg-slate-950/50 backdrop-blur-md border border-white/15 drop-shadow-md">
+              ✓ 100% Fixed Transparent Pricing
+            </span>
+            <span className="px-4 py-1.5 rounded-full bg-slate-950/50 backdrop-blur-md border border-white/15 drop-shadow-md">
+              ✓ Verified Professional Chauffeurs
+            </span>
+            <span className="px-4 py-1.5 rounded-full bg-slate-950/50 backdrop-blur-md border border-white/15 drop-shadow-md">
+              ✓ Clean & Sanitized Fleet
+            </span>
+          </div>
         </div>
       </div>
 
