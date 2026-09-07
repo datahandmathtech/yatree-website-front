@@ -1272,19 +1272,19 @@ export default function BookingPage() {
       <Navbar />
 
       {/* Premium Visual Banner with Picture */}
-      <div className="relative min-h-[420px] md:min-h-[480px] bg-slate-950 py-16 md:py-24 px-6 text-center overflow-hidden flex items-center justify-center border-b border-white/10">
+      <div className="relative min-h-[440px] md:min-h-[500px] bg-slate-950 py-16 md:py-24 px-6 text-center overflow-hidden flex items-center justify-center border-b border-white/10">
         {/* Background Picture */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/Gemini_Generated_Image_f2wk2xf2wk2xf2wk.png"
+            src="/yatree_luxury_booking_banner.jpg"
             alt="Best Taxi Service in Udaipur - Yatree Destination"
             fill
             priority
-            className="object-cover object-[center_bottom] scale-100 brightness-[0.8] contrast-[1.05]"
+            className="object-cover object-[center_60%] scale-100 brightness-[0.85] contrast-[1.05]"
           />
           {/* Subtle vignette gradients so picture remains rich and clear */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/70" />
-          <div className="absolute inset-0 bg-slate-950/30" />
+          <div className="absolute inset-0 bg-slate-950/20" />
         </div>
 
         {/* Ambient Glows */}
