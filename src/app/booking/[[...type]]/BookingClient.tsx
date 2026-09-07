@@ -1272,38 +1272,38 @@ export default function BookingPage() {
       <Navbar />
 
       {/* Premium Visual Banner with Picture */}
-      <div className="relative bg-slate-950 py-20 md:py-28 px-6 text-center overflow-hidden border-b border-white/10">
+      <div className="relative min-h-[420px] md:min-h-[480px] bg-slate-950 py-16 md:py-24 px-6 text-center overflow-hidden flex items-center justify-center border-b border-white/10">
         {/* Background Picture */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/luxury_sedan_lake_palace_1788329128615.jpg"
+            src="/Gemini_Generated_Image_f2wk2xf2wk2xf2wk.png"
             alt="Best Taxi Service in Udaipur - Yatree Destination"
             fill
             priority
-            className="object-cover object-[center_40%] scale-105 brightness-[0.45] contrast-[1.15]"
+            className="object-cover object-[center_bottom] scale-100 brightness-[0.8] contrast-[1.05]"
           />
-          {/* Multi-layered cinematic gradient overlays for pristine readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-transparent to-slate-950/90" />
+          {/* Subtle vignette gradients so picture remains rich and clear */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/70" />
+          <div className="absolute inset-0 bg-slate-950/30" />
         </div>
 
         {/* Ambient Glows */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] h-[320px] bg-gold-premium/20 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 opacity-40 pointer-events-none z-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[260px] bg-gold-premium/15 rounded-full blur-[100px]" />
         </div>
         
-        {/* Content Container */}
-        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gold-premium/40 bg-slate-900/80 backdrop-blur-md text-gold-premium font-black uppercase tracking-[0.3em] text-[11px] mb-5 shadow-[0_0_25px_rgba(212,175,55,0.25)]">
-            <Sparkle className="w-4 h-4 text-gold-premium animate-pulse" />
+        {/* Content Container - Luxury Frosted Glass Card */}
+        <div className="relative z-10 max-w-3xl mx-auto w-full bg-slate-950/65 backdrop-blur-xl border border-white/15 p-8 md:p-12 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col items-center">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gold-premium/40 bg-gold-premium/10 backdrop-blur-md text-gold-premium font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+            <Sparkle className="w-3.5 h-3.5 text-gold-premium animate-pulse" />
             Explore Udaipur US
           </span>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight uppercase mb-5 leading-[1.08] drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]">
-            Best Taxi Service in udaipur
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase mb-4 leading-[1.1] drop-shadow-md">
+            Best Taxi Service in <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-premium via-gold-light to-gold-premium">Udaipur</span>
           </h1>
 
-          <p className="text-slate-200/90 max-w-2xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed font-normal drop-shadow-md">
+          <p className="text-slate-200/90 max-w-xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed font-normal">
             Official, fully transparent fixed pricing sheets. Select your desired sightseeing parameters or transfer routes to estimate exact prices and reserve instantly.
           </p>
         </div>
