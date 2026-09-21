@@ -277,6 +277,12 @@ export default function ChatWidget() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Global Mobile Sticky Bar */}
+      <div className="fixed bottom-0 left-0 w-full z-[100] md:hidden flex border-t border-slate-200 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.1)] pb-[env(safe-area-inset-bottom)]">
+        <a href={phoneLink} className="flex-1 bg-slate-950 text-white flex items-center justify-center gap-2 py-4.5 font-bold text-[11px] sm:text-xs uppercase tracking-wider h-[56px]"><Phone className="w-4 h-4 text-gold-premium" /> Call Concierge</a>
+        <a href={`https://wa.me/${waLinkText}?text=Hi, I am interested in booking a luxury ride.`} target="_blank" rel="noopener noreferrer" className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4.5 font-bold text-[11px] sm:text-xs uppercase tracking-wider h-[56px]"><MessageCircle className="w-4 h-4" /> WhatsApp</a>
+      </div>
     </>
   );
 }
