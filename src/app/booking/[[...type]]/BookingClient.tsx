@@ -37,25 +37,25 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Pricing database from original website
 const TAXI_SERVICES_PRICING = [
-  { service: "Airport Pickup or Drop", desc: "Maharana Pratap Airport Udaipur", sedan: 1000, innova: 1500 },
-  { service: "City Local Sightseeing (8 Hours)", desc: "8 Hours or 80 Km City Tour", sedan: 2500, innova: 3500 },
-  { service: "City Local Sightseeing (12 Hours)", desc: "12 Hours or 120 Km City Tour", sedan: 3000, innova: 4000 },
-  { service: "Eklingji & Nathdwara Day Tour", desc: "4 Hours Half Day Service", sedan: 3000, innova: 4000 },
-  { service: "Eklingji, Nathdwara & Haldighati", desc: "6 Hours Classic Day Tour", sedan: 3500, innova: 4500 },
-  { service: "Ranakpur Jain Temple Tour", desc: "6 Hours Day Tour", sedan: 3500, innova: 4500 },
-  { service: "Kumbhalgarh Fort Day Tour", desc: "6 Hours Historical Tour", sedan: 3500, innova: 4500 },
-  { service: "Chittorgarh Fort Day Tour", desc: "6 Hours Heritage Tour", sedan: 4000, innova: 5000 },
-  { service: "Mount Abu Same Day Tour", desc: "10 Hours Hill Station Tour", sedan: 6000, innova: 8000 }
+  { service: "Airport Pickup or Drop", desc: "Maharana Pratap Airport Udaipur", sedan: 1000, innova: 1500, href: "/airport-taxi-udaipur" },
+  { service: "City Local Sightseeing (8 Hours)", desc: "8 Hours or 80 Km City Tour", sedan: 2500, innova: 3500, href: "/udaipur-sightseeing-8-hours-taxi" },
+  { service: "City Local Sightseeing (12 Hours)", desc: "12 Hours or 120 Km City Tour", sedan: 3000, innova: 4000, href: "/udaipur-sightseeing-12-hours-taxi" },
+  { service: "Eklingji & Nathdwara Day Tour", desc: "4 Hours Half Day Service", sedan: 3000, innova: 4000, href: "/udaipur-to-nathdwara-taxi" },
+  { service: "Eklingji, Nathdwara & Haldighati", desc: "6 Hours Classic Day Tour", sedan: 3500, innova: 4500, href: "/udaipur-to-haldighati-taxi" },
+  { service: "Ranakpur Jain Temple Tour", desc: "6 Hours Day Tour", sedan: 3500, innova: 4500, href: "/udaipur-to-ranakpur-taxi" },
+  { service: "Kumbhalgarh Fort Day Tour", desc: "6 Hours Historical Tour", sedan: 3500, innova: 4500, href: "/udaipur-to-kumbhalgarh-taxi" },
+  { service: "Chittorgarh Fort Day Tour", desc: "6 Hours Heritage Tour", sedan: 4000, innova: 5000, href: "/udaipur-to-chittorgarh-taxi" },
+  { service: "Mount Abu Same Day Tour", desc: "10 Hours Hill Station Tour", sedan: 6000, innova: 8000, href: "/udaipur-to-mount-abu-taxi" }
 ];
 
 const TRAVELLER_SERVICES_PRICING = [
-  { service: "Airport Pick & Drop", desc: "Maharana Pratap Airport Udaipur", t12: 3000, t17: 4000, t21: 5000 },
-  { service: "Railway Station Pick & Drop", desc: "Udaipur Railway Station Pick/Drop", t12: 2500, t17: 3000, t21: 3500 },
-  { service: "City Tour (8 Hours / 80 Km)", desc: "8 Hours or 80 KM Local Ride", t12: 6500, t17: 7500, t21: 8500 },
-  { service: "City Tour (12 Hours / 120 Km)", desc: "12 Hours or 120 KM Grand Tour", t12: 7500, t17: 9000, t21: 12000 },
-  { service: "Eklingji & Nathdwara Tour", desc: "6 Hours Religious Sightseeing", t12: 9000, t17: 12000, t21: 15000 },
-  { service: "Kumbhalgarh Fort Tour", desc: "6 Hours Historical Tour", t12: 9000, t17: 12000, t21: 15000 },
-  { service: "Chittorgarh Fort Tour", desc: "6 Hours Heritage Sightseeing", t12: 9500, t17: 12500, t21: 15500 }
+  { service: "Airport Pick & Drop", desc: "Maharana Pratap Airport Udaipur", t12: 3000, t17: 4000, t21: 5000, href: "/airport-taxi-udaipur" },
+  { service: "Railway Station Pick & Drop", desc: "Udaipur Railway Station Pick/Drop", t12: 2500, t17: 3000, t21: 3500, href: "/udaipur-railway-station-taxi" },
+  { service: "City Tour (8 Hours / 80 Km)", desc: "8 Hours or 80 KM Local Ride", t12: 6500, t17: 7500, t21: 8500, href: "/udaipur-sightseeing-8-hours-taxi" },
+  { service: "City Tour (12 Hours / 120 Km)", desc: "12 Hours or 120 KM Grand Tour", t12: 7500, t17: 9000, t21: 12000, href: "/udaipur-sightseeing-12-hours-taxi" },
+  { service: "Eklingji & Nathdwara Tour", desc: "6 Hours Religious Sightseeing", t12: 9000, t17: 12000, t21: 15000, href: "/udaipur-to-nathdwara-taxi" },
+  { service: "Kumbhalgarh Fort Tour", desc: "6 Hours Historical Tour", t12: 9000, t17: 12000, t21: 15000, href: "/udaipur-to-kumbhalgarh-taxi" },
+  { service: "Chittorgarh Fort Tour", desc: "6 Hours Heritage Sightseeing", t12: 9500, t17: 12500, t21: 15500, href: "/udaipur-to-chittorgarh-taxi" }
 ];
 
 // Clean light background vehicle display metadata
@@ -195,7 +195,7 @@ function BookingEngine() {
     }
 
     // Direct WhatsApp prefill
-    const whatsappNumber = "917627013579";
+    const whatsappNumber = "917737737937";
     const text = `*YATREE DESTINATION - RESERVATION WITH RATE*\n` +
                  `----------------------------------------\n` +
                  `👤 *Customer Name:* ${formData.name}\n` +
@@ -337,28 +337,38 @@ function BookingEngine() {
                       className="space-y-4"
                     >
                       {TAXI_SERVICES_PRICING.map((item, i) => (
-                        <div 
+                        <Link 
                           key={i} 
-                          onClick={() => setSelectedServiceIndex(i)}
-                          className={`p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between gap-6 cursor-pointer bg-white text-left shadow-sm ${selectedServiceIndex === i ? 'border-gold-premium ring-1 ring-gold-premium/15 shadow' : 'border-slate-200/60 hover:border-gold-premium/30'}`}
+                          href={item.href}
+                          className="group p-5 rounded-2xl border border-slate-200/80 hover:border-gold-premium hover:shadow-[0_12px_30px_rgba(212,175,55,0.12)] transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white text-left shadow-sm relative overflow-hidden block"
                         >
-                          <div className="space-y-1">
-                            <h4 className="font-extrabold text-slate-950 text-sm md:text-base uppercase tracking-tight">{item.service}</h4>
+                          <div className="space-y-1 pr-2">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h4 className="font-extrabold text-slate-950 text-sm md:text-base uppercase tracking-tight group-hover:text-gold-premium transition-colors">
+                                {item.service}
+                              </h4>
+                              <span className="text-[10px] font-bold uppercase tracking-wider bg-gold-premium/10 text-gold-premium px-2 py-0.5 rounded-full flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                                View Tour <ArrowRight className="w-3 h-3" />
+                              </span>
+                            </div>
                             <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">{item.desc}</p>
                           </div>
                           
-                          <div className="flex gap-4 items-center shrink-0">
-                            <div className="text-right">
-                              <span className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">Sedan</span>
+                          <div className="flex items-center justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                            <div className="text-left sm:text-right">
+                              <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sedan</span>
                               <span className="font-black text-slate-950 text-sm md:text-base">₹{item.sedan.toLocaleString()}</span>
                             </div>
                             <div className="w-px h-8 bg-slate-100" />
-                            <div className="text-right">
-                              <span className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">Innova</span>
+                            <div className="text-left sm:text-right">
+                              <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Innova</span>
                               <span className="font-black text-gold-premium text-sm md:text-base">₹{item.innova.toLocaleString()}</span>
                             </div>
+                            <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-gold-premium group-hover:text-midnight flex items-center justify-center text-slate-400 transition-all ml-1">
+                              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                            </div>
                           </div>
-                        </div>
+                        </Link>
                       ))}
                     </motion.div>
                   ) : (
@@ -371,33 +381,43 @@ function BookingEngine() {
                       className="space-y-4"
                     >
                       {TRAVELLER_SERVICES_PRICING.map((item, i) => (
-                        <div 
+                        <Link 
                           key={i} 
-                          onClick={() => setSelectedServiceIndex(i)}
-                          className={`p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between gap-6 cursor-pointer bg-white text-left shadow-sm ${selectedServiceIndex === i ? 'border-gold-premium ring-1 ring-gold-premium/15 shadow' : 'border-slate-200/60 hover:border-gold-premium/30'}`}
+                          href={item.href}
+                          className="group p-5 rounded-2xl border border-slate-200/80 hover:border-gold-premium hover:shadow-[0_12px_30px_rgba(212,175,55,0.12)] transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white text-left shadow-sm relative overflow-hidden block"
                         >
-                          <div className="space-y-1">
-                            <h4 className="font-extrabold text-slate-950 text-sm md:text-base uppercase tracking-tight">{item.service}</h4>
+                          <div className="space-y-1 pr-2">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h4 className="font-extrabold text-slate-950 text-sm md:text-base uppercase tracking-tight group-hover:text-gold-premium transition-colors">
+                                {item.service}
+                              </h4>
+                              <span className="text-[10px] font-bold uppercase tracking-wider bg-gold-premium/10 text-gold-premium px-2 py-0.5 rounded-full flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                                View Tour <ArrowRight className="w-3 h-3" />
+                              </span>
+                            </div>
                             <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">{item.desc}</p>
                           </div>
                           
-                          <div className="flex gap-4 items-center shrink-0">
-                            <div className="text-right">
-                              <span className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">12 Seater</span>
-                              <span className="font-black text-slate-950 text-sm">₹{item.t12.toLocaleString()}</span>
+                          <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                            <div className="text-left sm:text-right">
+                              <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">12 Seater</span>
+                              <span className="font-black text-slate-950 text-xs md:text-sm">₹{item.t12.toLocaleString()}</span>
                             </div>
                             <div className="w-px h-8 bg-slate-100" />
-                            <div className="text-right">
-                              <span className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">17 Seater</span>
-                              <span className="font-black text-slate-800 text-sm">₹{item.t17.toLocaleString()}</span>
+                            <div className="text-left sm:text-right">
+                              <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">17 Seater</span>
+                              <span className="font-black text-slate-800 text-xs md:text-sm">₹{item.t17.toLocaleString()}</span>
                             </div>
                             <div className="w-px h-8 bg-slate-100" />
-                            <div className="text-right">
-                              <span className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">21 Seater</span>
-                              <span className="font-black text-gold-premium text-sm">₹{item.t21.toLocaleString()}</span>
+                            <div className="text-left sm:text-right">
+                              <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">21 Seater</span>
+                              <span className="font-black text-gold-premium text-xs md:text-sm">₹{item.t21.toLocaleString()}</span>
+                            </div>
+                            <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-gold-premium group-hover:text-midnight flex items-center justify-center text-slate-400 transition-all ml-1">
+                              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </div>
                           </div>
-                        </div>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
@@ -604,15 +624,15 @@ function BookingEngine() {
                     </div>
                     <div>
                       <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Speak to our Coordinator</span>
-                      <a href="tel:+917627013579" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
+                      <a href="tel:+917737737937" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative z-10">
-                    <a href="tel:+917627013579" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
+                    <a href="tel:+917737737937" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
                       Call Now
                     </a>
-                    <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                    <a href="https://wa.me/917737737937" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
                       <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp
                     </a>
                   </div>
@@ -879,7 +899,7 @@ function BookingEngine() {
 
                   <div className="bg-white border border-slate-200/80 rounded-[2.5rem] p-6 md:p-10 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
                     {[
-                      { q: "How can I book a taxi in Udaipur?", a: "You can book a taxi by calling us directly at +91 7627013579 or by submitting the instant booking inquiry form on this page, which will pre-fill your trip details to send to our coordinator via WhatsApp." },
+                      { q: "How can I book a taxi in Udaipur?", a: "You can book a taxi by calling us directly at +91 7737737937 or by submitting the instant booking inquiry form on this page, which will pre-fill your trip details to send to our coordinator via WhatsApp." },
                       { q: "Do you provide airport pickup and drop services?", a: "Yes, we provide 24/7 dedicated airport transfers to and from Maharana Pratap Airport in Udaipur. Our drivers monitor flight schedules to ensure prompt pick-ups." },
                       { q: "Can I hire a taxi for local sightseeing?", a: "Absolutely! We offer flexible sightseeing taxi packages for Udaipur, including standard half-day (4 Hours) and full-day (8 Hours & 12 Hours) tours." },
                       { q: "Do you provide Tempo Travellers?", a: "Yes, we maintain a fleet of premium Force Tempo Travellers in 12-seater, 17-seater, and 21-seater configurations, ideal for family trips and group travels." },
@@ -937,10 +957,10 @@ function BookingEngine() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                  <a href="tel:+917627013579" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight">
+                  <a href="tel:+917737737937" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight">
                     <Phone className="w-4 h-4" /> Call Now: +91 76270 13579
                   </a>
-                  <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
+                  <a href="https://wa.me/917737737937" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
                     <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp Booking
                   </a>
                 </div>
@@ -1013,15 +1033,15 @@ function BookingEngine() {
                         </div>
                         <div>
                           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Speak to our Coordinator</span>
-                          <a href="tel:+917627013579" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
+                          <a href="tel:+917737737937" className="text-xl md:text-2xl font-black text-white hover:text-gold-premium transition-colors tracking-tight">+91 76270 13579</a>
                         </div>
                       </div>
                       
                       <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative z-10">
-                        <a href="tel:+917627013579" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
+                        <a href="tel:+917737737937" className="w-full sm:w-auto text-center bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md">
                           Call Now
                         </a>
-                        <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                        <a href="https://wa.me/917737737937" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
                           <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp
                         </a>
                       </div>
@@ -1185,7 +1205,7 @@ function BookingEngine() {
 
                   <div className="bg-white border border-slate-200/80 rounded-[2.5rem] p-6 md:p-10 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
                     {[
-                      { q: "How can I book a Tempo Traveller in Udaipur?", a: "You can book a Tempo Traveller by calling us directly at +91 7627013579 or by submitting the instant booking inquiry form on this page to send your parameters directly to our coordinator via WhatsApp." },
+                      { q: "How can I book a Tempo Traveller in Udaipur?", a: "You can book a Tempo Traveller by calling us directly at +91 7737737937 or by submitting the instant booking inquiry form on this page to send your parameters directly to our coordinator via WhatsApp." },
                       { q: "Do you provide luxury Tempo Travellers in Udaipur?", a: "Yes. We provide fully equipped luxury Tempo Travellers with premium reclining seats, enhanced legroom, LED lighting, and individual charging points for weddings, corporate events, and VIP travel." },
                       { q: "What is the Tempo Traveller price in Udaipur?", a: "Pricing varies according to seating capacity, travel distance, and trip duration. We recommend contacting our travel experts to get a customized fixed price quotation." },
                       { q: "Do you provide 12 seater Tempo Traveller in Udaipur?", a: "Yes, we offer a wide range of seating options, including 12, 17, 20, and 21-seater Tempo Travellers." },
@@ -1243,10 +1263,10 @@ function BookingEngine() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                  <a href="tel:+917627013579" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight font-bold">
+                  <a href="tel:+917737737937" className="w-full sm:w-auto bg-gold-premium hover:bg-gold-premium/90 text-midnight font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold text-midnight font-bold">
                     <Phone className="w-4 h-4" /> Call Now: +91 76270 13579
                   </a>
-                  <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
+                  <a href="https://wa.me/917737737937" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-[#25D366] hover:bg-[#22c35e] text-white font-black uppercase tracking-widest text-xs px-8 py-4.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 font-bold font-bold">
                     <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp Booking
                   </a>
                 </div>
@@ -1336,7 +1356,7 @@ export default function BookingPage() {
 
       {/* WhatsApp Concierge floating widget */}
       <div className="fixed bottom-8 right-8 z-[90] hidden md:block">
-         <a href="https://wa.me/917627013579" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-all duration-300">
+         <a href="https://wa.me/917737737937" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-all duration-300">
             <MessageCircle className="w-6 h-6 fill-current" />
          </a>
       </div>
