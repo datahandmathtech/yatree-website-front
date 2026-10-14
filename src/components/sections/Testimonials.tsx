@@ -200,22 +200,39 @@ export default function Testimonials() {
                       {/* Author Info & Google G */}
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
-                          {review.authorPhoto ? (
-                            <img
-                              src={review.authorPhoto}
-                              alt={review.author}
-                              className="w-11 h-11 rounded-full object-cover border border-slate-200 shadow-xs"
-                              referrerPolicy="no-referrer"
-                            />
-                          ) : (
-                            <div
-                              className={`w-11 h-11 rounded-full ${
-                                review.avatarColor || "bg-orange-600"
-                              } text-white font-bold flex items-center justify-center text-sm shadow-xs`}
-                            >
-                              {review.initials || review.author?.charAt(0) || "U"}
-                            </div>
-                          )}
+                          <div className="relative w-11 h-11 shrink-0">
+                            {review.authorPhoto ? (
+                              <>
+                                <img
+                                  src={review.authorPhoto}
+                                  alt={review.author}
+                                  className="w-11 h-11 rounded-full object-cover border border-slate-200 shadow-xs"
+                                  referrerPolicy="no-referrer"
+                                  onError={(e) => {
+                                    const target = e.currentTarget;
+                                    target.style.display = "none";
+                                    const fallback = target.parentElement?.querySelector(".fallback-avatar");
+                                    if (fallback) (fallback as HTMLElement).style.display = "flex";
+                                  }}
+                                />
+                                <div
+                                  className={`fallback-avatar hidden w-11 h-11 rounded-full ${
+                                    review.avatarColor || "bg-orange-600"
+                                  } text-white font-bold items-center justify-center text-sm shadow-xs`}
+                                >
+                                  {review.initials || review.author?.charAt(0) || "U"}
+                                </div>
+                              </>
+                            ) : (
+                              <div
+                                className={`w-11 h-11 rounded-full ${
+                                  review.avatarColor || "bg-orange-600"
+                                } text-white font-bold flex items-center justify-center text-sm shadow-xs`}
+                              >
+                                {review.initials || review.author?.charAt(0) || "U"}
+                              </div>
+                            )}
+                          </div>
                           <div>
                             <div className="flex items-center gap-1.5">
                               <h3 className="font-bold text-slate-900 text-sm">

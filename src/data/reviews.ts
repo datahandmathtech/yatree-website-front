@@ -87,6 +87,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
   {
     id: "rev-rahul-sharma",
     author: "Rahul Sharma",
+    authorPhoto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
     rating: 5,
     relativeTime: "1 month ago",
     text: "We booked an Innova Crysta for a 4-day Udaipur and Kumbhalgarh tour with Yatree Destination. The chauffeur was punctual, well-mannered, and the vehicle was immaculately clean. Completely transparent fixed billing with zero hidden surprises. Best cab service in Udaipur!",
@@ -98,6 +99,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
   {
     id: "rev-priya-sengupta",
     author: "Priya & Aniket Sengupta",
+    authorPhoto: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
     rating: 5,
     relativeTime: "1 month ago",
     text: "Outstanding sightseeing experience! We took the 2-day local lake city package. Our driver knew all the scenic sunset viewpoints at Lake Pichola and helped us navigate City Palace without crowds. Smooth driving and very polite staff.",
@@ -109,6 +111,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
   {
     id: "rev-vikramaditya",
     author: "Vikramaditya Rathore",
+    authorPhoto: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
     rating: 5,
     relativeTime: "2 months ago",
     text: "Hired Yatree Destination for corporate delegation transfers during our MICE event in Udaipur. Fleet of pristine Innovas and sedans handled airport pickups seamlessly. High level of professionalism and luxury.",
@@ -120,6 +123,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
   {
     id: "rev-dr-sneha",
     author: "Dr. Sneha Kulkarni",
+    authorPhoto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
     rating: 5,
     relativeTime: "2 months ago",
     text: "Took a same-day roundtrip taxi to Mount Abu and Dilwara Temples. The ghat mountain driving was extremely smooth and safe with my elderly parents. Highway tolls were pre-included as promised. Highly recommend them!",
@@ -131,6 +135,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
   {
     id: "rev-amit-verma",
     author: "Amit Verma",
+    authorPhoto: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80",
     rating: 5,
     relativeTime: "3 months ago",
     text: "Booked a 12-seater Maharaja Tempo Traveller for a large family trip covering Chittorgarh Fort and Shrinathji Nathdwara. Push-back seats were super comfortable, AC chilled quickly in the summer heat, and the chauffeur was very cooperative.",
@@ -142,6 +147,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
   {
     id: "rev-meera-nair",
     author: "Meera Nair",
+    authorPhoto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
     rating: 5,
     relativeTime: "3 months ago",
     text: "Airport pickup at 11:30 PM was smooth and effortless. The driver was already waiting outside Udaipur Airport with my name board. Clean sanitized car, direct hotel transfer, and I felt completely safe as a solo female traveler.",
@@ -153,6 +159,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
   {
     id: "rev-rajesh-patel",
     author: "Rajesh Patel",
+    authorPhoto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
     rating: 5,
     relativeTime: "4 months ago",
     text: "Booked a multi-day Rajasthan journey from Udaipur to Jodhpur and Jaisalmer. Chauffeur was skilled, drove responsibly on desert highways, and recommended wonderful Rajasthani food spots. Top-tier service.",
