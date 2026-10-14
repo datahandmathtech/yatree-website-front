@@ -86,7 +86,7 @@ export const TOUR_PAGES_DATA: Record<string, TourPageData> = {
       { q: "What is included in the 8 hours / 80 km sightseeing taxi?", a: "The package includes 8 hours of chauffeur-driven car service covering up to 80 km inside Udaipur. All fuel, driver allowances, and parking fees are fully covered." },
       { q: "Can we customize the places we want to visit?", a: "Yes, absolutely! The itinerary is 100% customizable. You can choose which monuments, lakes, or shopping spots you prefer to visit." },
       { q: "What if our tour exceeds 8 hours or 80 km?", a: "Overtime is charged transparently: ₹150/hr for Sedan and ₹200/hr for Innova Crysta. Extra kilometers are billed at ₹12/km for Sedan and ₹17/km for Innova." },
-      { q: "How do I book this sightseeing cab?", a: "You can book instantly using our booking form above, or call/WhatsApp us at +91 77377 37937 for instant confirmation." }
+      { q: "How do I book this sightseeing cab?", a: "You can book instantly using our booking form above, or call/WhatsApp us at +91 76270 13579 for instant confirmation." }
     ]
   },
 
@@ -380,7 +380,7 @@ export const TOUR_PAGES_DATA: Record<string, TourPageData> = {
     exclusions: ["Boat ride fees and monument tickets", "Meals and personal shopping"],
     faqs: [
       { q: "Is a same-day trip from Udaipur to Mount Abu feasible?", a: "Yes, very feasible! Leaving Udaipur at 7:30 AM gives you a full 6 to 7 hours in Mount Abu before returning comfortably by dinner time." },
-      { q: "Can we book an outstation overnight stay in Mount Abu?", a: "Yes! If you wish to stay overnight in Mount Abu, we offer 2-day roundtrip packages as well. Call +91 77377 37937 for custom itineraries." }
+      { q: "Can we book an outstation overnight stay in Mount Abu?", a: "Yes! If you wish to stay overnight in Mount Abu, we offer 2-day roundtrip packages as well. Call +91 76270 13579 for custom itineraries." }
     ]
   },
 

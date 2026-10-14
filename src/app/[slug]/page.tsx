@@ -193,14 +193,14 @@ export default async function ProgrammaticPage({ params }: PageProps) {
               </a>
 
               <a 
-                href="tel:+917737737937" 
+                href="tel:+917627013579" 
                 className="h-14 px-8 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white font-bold flex items-center gap-2 transition-all hover:bg-white/20 hover:border-white/40 active:scale-95 text-sm uppercase tracking-wider"
               >
-                <Phone className="w-4 h-4 text-gold-premium" /> Call +91 77377 37937
+                <Phone className="w-4 h-4 text-gold-premium" /> Call +91 76270 13579
               </a>
 
               <a 
-                href={`https://wa.me/917737737937?text=Hi%20Yatree%20Destination,%20I%20want%20to%20book%20the%20${encodeURIComponent(tour.serviceName)}.`}
+                href={`https://wa.me/917627013579?text=Hi%20Yatree%20Destination,%20I%20want%20to%20book%20the%20${encodeURIComponent(tour.serviceName)}.`}
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="h-14 px-7 rounded-full bg-[#25D366] text-white font-bold flex items-center gap-2 hover:bg-[#20b858] transition-all shadow-md active:scale-95 text-sm uppercase tracking-wider"
@@ -413,13 +413,13 @@ export default async function ProgrammaticPage({ params }: PageProps) {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a 
-                href="tel:+917737737937" 
+                href="tel:+917627013579" 
                 className="bg-gold-premium text-midnight px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs md:text-sm flex items-center gap-2 hover:bg-white transition-all shadow-lg active:scale-95"
               >
-                <Phone className="w-4 h-4" /> Call +91 77377 37937
+                <Phone className="w-4 h-4" /> Call +91 76270 13579
               </a>
               <a 
-                href={`https://wa.me/917737737937?text=Hi%20Yatree%20Destination,%20I%20want%20to%20reserve%20the%20${encodeURIComponent(tour.serviceName)}.`} 
+                href={`https://wa.me/917627013579?text=Hi%20Yatree%20Destination,%20I%20want%20to%20reserve%20the%20${encodeURIComponent(tour.serviceName)}.`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs md:text-sm flex items-center gap-2 hover:bg-[#20b858] transition-all shadow-lg active:scale-95"
@@ -473,7 +473,7 @@ export default async function ProgrammaticPage({ params }: PageProps) {
               </span>
               <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
             </Link>
-            <a href="tel:+917737737937" className="h-14 px-8 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold flex items-center gap-2 transition-all hover:bg-white/10 hover:border-white/40 active:scale-95">
+            <a href="tel:+917627013579" className="h-14 px-8 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-bold flex items-center gap-2 transition-all hover:bg-white/10 hover:border-white/40 active:scale-95">
               <Phone className="w-4 h-4 text-gold-premium" />
               Call Now
             </a>
@@ -606,7 +606,7 @@ export default async function ProgrammaticPage({ params }: PageProps) {
               const faqs = [
                 {
                   q: type === "outstation" ? `What is the distance from Udaipur to ${city}?` : `How do I book ${service.name} in ${city}?`,
-                  a: type === "outstation" ? `The distance from Udaipur to ${city} varies by exact route, but our experienced drivers know the best and fastest roads. You can easily book a direct cab with Yatree Destination for a seamless journey.` : `Booking is easy! You can fill out our online form, call us directly at +91 77377 37937, or WhatsApp us to book your ${service.name} instantly.`
+                  a: type === "outstation" ? `The distance from Udaipur to ${city} varies by exact route, but our experienced drivers know the best and fastest roads. You can easily book a direct cab with Yatree Destination for a seamless journey.` : `Booking is easy! You can fill out our online form, call us directly at +91 76270 13579, or WhatsApp us to book your ${service.name} instantly.`
                 },
                 {
                   q: "Are the drivers experienced and verified?",

@@ -7,6 +7,7 @@ import {
   MapPin, Check, Car, User, Phone, MessageCircle, Compass 
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { packagesData } from "@/data/packages";
 import { useState } from "react";
@@ -218,9 +219,12 @@ Requirements: ${formData.requirements}`;
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {packagesData.map((pkg) => (
               <div key={pkg.id} className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group hover:-translate-y-1">
-                <div className="bg-slate-900 text-white p-6 text-center">
-                  <h3 className="font-bold text-lg tracking-wide">{pkg.title}</h3>
-                </div>
+                <Link href={`/multi-day-taxi-packages/${pkg.slug}/`} className="block bg-slate-900 text-white p-6 text-center group-hover:bg-orange-500 transition-colors">
+                  <h3 className="font-bold text-lg tracking-wide group-hover:text-white transition-colors">{pkg.title}</h3>
+                  <span className="text-[10px] uppercase tracking-widest text-slate-400 group-hover:text-white/90 font-semibold mt-1 inline-flex items-center gap-1">
+                    View Full Itinerary <ChevronRight className="w-3 h-3" />
+                  </span>
+                </Link>
                 
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="mb-8 space-y-4">
@@ -255,12 +259,20 @@ Requirements: ${formData.requirements}`;
                       </div>
                     </div>
                     
-                    <button 
-                      onClick={() => handleWhatsAppQuote(pkg.title)}
-                      className="w-full bg-orange-500 text-white py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-orange-600 transition-colors shadow-lg flex items-center justify-center gap-2"
-                    >
-                      <MessageCircle className="w-4 h-4" /> Get Quote
-                    </button>
+                    <div className="grid grid-cols-2 gap-3">
+                      <Link 
+                        href={`/multi-day-taxi-packages/${pkg.slug}/`}
+                        className="bg-slate-900 text-white py-3.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-slate-800 transition-colors shadow flex items-center justify-center gap-1 text-center"
+                      >
+                        View Details
+                      </Link>
+                      <button 
+                        onClick={() => handleWhatsAppQuote(pkg.title)}
+                        className="bg-orange-500 text-white py-3.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-orange-600 transition-colors shadow-lg flex items-center justify-center gap-1.5"
+                      >
+                        <MessageCircle className="w-4 h-4" /> Get Quote
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
