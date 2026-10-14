@@ -145,80 +145,20 @@ Requirements: ${formData.requirements}`;
         </div>
       </section>
 
-      {/* Value Prop */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6 text-center max-w-4xl">
-          <h2 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">ONE VEHICLE. ONE DRIVER. YOUR COMPLETE TRIP.</h2>
-          <p className="text-slate-600 text-lg mb-12 leading-relaxed">Avoid arranging a different taxi every day. Pre-book your complete Udaipur and Rajasthan transport with Yatree Destination before your journey begins.</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-              <Calendar className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold text-slate-900 text-lg mb-2">Plan Before Arrival</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">Vehicle and itinerary confirmed before you reach Udaipur.</p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-              <CreditCard className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold text-slate-900 text-lg mb-2">Transparent Package</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">Know your transport cost in advance. No hidden charges.</p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
-              <Map className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold text-slate-900 text-lg mb-2">Custom Itinerary</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">Routes can be customized as per your travel plan.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Fleet Display using real images */}
-      <section className="py-24 bg-white border-t border-slate-200">
+      {/* 3. Choose Your Taxi Package (Pricing Cards Grid) */}
+      <section className="py-20 bg-slate-50" id="packages">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-6">Our Premium Fleet</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto text-lg">Well-maintained vehicles equipped for long multi-day journeys across Rajasthan.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center group">
-              <div className="relative w-full h-48 mb-6 transition-transform duration-500 group-hover:scale-110">
-                <Image src="/dzire.png" alt="Sedan Taxi Udaipur" fill className="object-contain drop-shadow-xl" />
-              </div>
-              <h3 className="text-xl font-black text-slate-900 mb-2">Premium Sedan</h3>
-              <p className="text-sm text-slate-500 text-center">Dzire / Etios. Best for couples or small families (up to 4 passengers).</p>
-            </div>
-            
-            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center group relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-bl-xl">Most Popular</div>
-              <div className="relative w-full h-48 mb-6 transition-transform duration-500 group-hover:scale-110">
-                <Image src="/Innova crysta.png" alt="Innova Crysta Udaipur" fill className="object-contain drop-shadow-xl" />
-              </div>
-              <h3 className="text-xl font-black text-slate-900 mb-2">Innova Crysta</h3>
-              <p className="text-sm text-slate-500 text-center">Ultimate luxury and space. Perfect for long journeys (up to 6 passengers).</p>
-            </div>
-            
-            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center group">
-              <div className="relative w-full h-48 mb-6 transition-transform duration-500 group-hover:scale-110">
-                <Image src="/tempo.png" alt="Tempo Traveller Udaipur" fill className="object-contain drop-shadow-xl" />
-              </div>
-              <h3 className="text-xl font-black text-slate-900 mb-2">Tempo Traveller</h3>
-              <p className="text-sm text-slate-500 text-center">Spacious 12-seater to 17-seater options for large families and groups.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Pricing Cards Grid */}
-      <section className="py-24 bg-white" id="packages">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-6">Choose Your Taxi Package</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto text-lg">Popular private transport plans starting from Udaipur. All fares below are exclusive of GST.</p>
+            <span className="inline-block bg-orange-500/10 text-orange-600 px-3 py-1 rounded-full font-bold uppercase tracking-widest text-xs mb-3">
+              Explore Our Itineraries
+            </span>
+            <h2 className="text-4xl font-black text-slate-900 mb-4">Choose Your Taxi Package</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">Popular private transport plans starting from Udaipur. All fares below are exclusive of GST.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {packagesData.map((pkg) => (
-              <div key={pkg.id} className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group hover:-translate-y-1">
+              <div key={pkg.id} className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group hover:-translate-y-1">
                 <Link href={`/multi-day-taxi-packages/${pkg.slug}/`} className="block bg-slate-900 text-white p-6 text-center group-hover:bg-orange-500 transition-colors">
                   <h3 className="font-bold text-lg tracking-wide group-hover:text-white transition-colors">{pkg.title}</h3>
                   <span className="text-[10px] uppercase tracking-widest text-slate-400 group-hover:text-white/90 font-semibold mt-1 inline-flex items-center gap-1">
@@ -243,7 +183,7 @@ Requirements: ${formData.requirements}`;
                   </div>
                   
                   <div className="mt-auto">
-                    <div className="bg-slate-50 p-6 rounded-2xl mb-8">
+                    <div className="bg-slate-50 p-6 rounded-2xl mb-8 border border-slate-100">
                       <div className="grid grid-cols-2 gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
                         <span>Vehicle</span>
                         <span className="text-right">Rate</span>
@@ -277,6 +217,69 @@ Requirements: ${formData.requirements}`;
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Value Prop */}
+      <section className="py-24 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-6 text-center max-w-4xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">ONE VEHICLE. ONE DRIVER. YOUR COMPLETE TRIP.</h2>
+          <p className="text-slate-600 text-lg mb-12 leading-relaxed">Avoid arranging a different taxi every day. Pre-book your complete Udaipur and Rajasthan transport with Yatree Destination before your journey begins.</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
+              <Calendar className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-bold text-slate-900 text-lg mb-2">Plan Before Arrival</h3>
+              <p className="text-sm text-slate-500 leading-relaxed">Vehicle and itinerary confirmed before you reach Udaipur.</p>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
+              <CreditCard className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-bold text-slate-900 text-lg mb-2">Transparent Package</h3>
+              <p className="text-sm text-slate-500 leading-relaxed">Know your transport cost in advance. No hidden charges.</p>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
+              <Map className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-bold text-slate-900 text-lg mb-2">Custom Itinerary</h3>
+              <p className="text-sm text-slate-500 leading-relaxed">Routes can be customized as per your travel plan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Our Fleet Display using real images */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-slate-900 mb-6">Our Premium Fleet</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-lg">Well-maintained vehicles equipped for long multi-day journeys across Rajasthan.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 flex flex-col items-center group shadow-sm">
+              <div className="relative w-full h-48 mb-6 transition-transform duration-500 group-hover:scale-110">
+                <Image src="/dzire.png" alt="Sedan Taxi Udaipur" fill className="object-contain drop-shadow-xl" />
+              </div>
+              <h3 className="text-xl font-black text-slate-900 mb-2">Premium Sedan</h3>
+              <p className="text-sm text-slate-500 text-center">Dzire / Etios. Best for couples or small families (up to 4 passengers).</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 flex flex-col items-center group relative overflow-hidden shadow-sm">
+              <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-bl-xl">Most Popular</div>
+              <div className="relative w-full h-48 mb-6 transition-transform duration-500 group-hover:scale-110">
+                <Image src="/Innova crysta.png" alt="Innova Crysta Udaipur" fill className="object-contain drop-shadow-xl" />
+              </div>
+              <h3 className="text-xl font-black text-slate-900 mb-2">Innova Crysta</h3>
+              <p className="text-sm text-slate-500 text-center">Ultimate luxury and space. Perfect for long journeys (up to 6 passengers).</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 flex flex-col items-center group shadow-sm">
+              <div className="relative w-full h-48 mb-6 transition-transform duration-500 group-hover:scale-110">
+                <Image src="/tempo.png" alt="Tempo Traveller Udaipur" fill className="object-contain drop-shadow-xl" />
+              </div>
+              <h3 className="text-xl font-black text-slate-900 mb-2">Tempo Traveller</h3>
+              <p className="text-sm text-slate-500 text-center">Spacious 12-seater to 17-seater options for large families and groups.</p>
+            </div>
           </div>
         </div>
       </section>
